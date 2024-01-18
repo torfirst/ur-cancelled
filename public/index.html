@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>You're Cancelled.</title>
+</head>
+
+<body>
+    <nav>
+        <h1>YOU'RE <span class="red-text">CANCELLED</span>.</h1>
+    </nav>
+    <div class="mainContainer">
+        <div class="loginDiv">
+            <h3>Please enter your phone number to log in:</h3>
+            <form id="phoneForm">
+                <label for="phoneNumber"></label><br>
+                <input type="text" id="phoneNumber" placeholder="(123) 456-7890" name="phone number" maxlength="14"><br>
+                <span id="phoneNumberError" class="errorMsg red-text"></span><br>
+                <input type="checkbox" />
+                <label for="disclaimer" id="disclaimer">By providing your phone number, you consent to its use
+                    exclusively for the purpose of logging into your account. We will never contact you for any other
+                    reason or share your number third parties.</label><br>
+                <span id="disclaimerError" class="errorMsg red-text"></span><br>
+                <input type="button" id="validateBtn" class="button" value="Submit">
+            </form>
+        </div>
+    </div>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

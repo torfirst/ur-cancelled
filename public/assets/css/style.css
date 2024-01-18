@@ -1,0 +1,119 @@
+:root {
+    --bgColor: rgb(43, 44, 60);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+    font-family: Verdana, sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+nav {
+    margin: 0;
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: rgb(220, 220, 238);
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+.red-text {
+    color: red;
+    font-size: inherit;
+}
+
+body {
+    background-color: var(--bgColor);
+}
+
+.mainContainer {
+    text-align: center;
+    /* color: rgb(233, 242, 255); */
+}
+
+.loginDiv {
+    margin: 5rem 15rem;
+    padding: 5rem 10rem;
+    background-color: rgb(220, 220, 238);
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+#disclaimer {
+    font-size: .75rem;
+}
+
+.errorMsg {
+    font-size: .8rem;
+}
+
+input {
+    padding: .5rem;
+    border-radius: 15px;
+}
+
+.button {
+  appearance: button;
+  background-color: #4D4AE8;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
+  border: 1px solid #4D4AE8;
+  border-radius: 1rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button:focus:not(:focus-visible),
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background-color: #3733E5;
+  border-color: #3733E5;
+}
+
+.button:focus {
+  background-color: #413FC5;
+  border-color: #3E3BBA;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+.button:active {
+  background-color: #3E3BBA;
+  background-image: none;
+  border-color: #3A38AE;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.button:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+.button:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: .65;
+  pointer-events: none;
+}
