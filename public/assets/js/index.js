@@ -1,12 +1,12 @@
 const loginDiv = document.querySelector('.loginDiv');
-const phoneForm = document.getElementById('phoneForm');
-const phoneNumberInput = document.getElementById('phoneNumber');
-const phoneNumberError = document.getElementById('phoneNumberError');
+const emailForm = document.getElementById('emailForm');
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
 const disclaimerCheckbox = document.getElementById('disclaimerCheckbox');
 const disclaimerError = document.getElementById('disclaimerError');
 const validateBtn = document.getElementById('validateBtn');
 
-phoneNumberInput.addEventListener('input', (event) => {
+emailInput.addEventListener('input', (event) => {
     let inputValue = event.target.value.replace(/\D/g, ''); // Remove non-numeric characters
 
     if (inputValue.length > 10) {
