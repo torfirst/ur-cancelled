@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/jass.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>You're Cancelled.</title>
 </head>
@@ -13,16 +14,27 @@
         <h1>YOU'RE <span class="red-text">CANCELLED</span>.</h1>
     </nav>
     <div class="mainContainer">
+        <h3>Log In Below</h3>
         <div class="loginDiv">
-            <h3>Please enter your phone number to log in:</h3>
-            <form id="phoneForm">
-                <label for="phoneNumber"></label><br>
-                <input type="text" id="phoneNumber" placeholder="(123) 456-7890" name="phone number" maxlength="14"><br>
-                <span id="phoneNumberError" class="errorMsg red-text"></span><br>
-                <input type="checkbox" />
-                <label for="disclaimer" id="disclaimer">By providing your phone number, you consent to its use
-                    exclusively for the purpose of logging into your account. We will never contact you for any other
-                    reason or share your number third parties.</label><br>
+            <form id="emailForm">
+                <p class="loginFormTitles">Email Address:</p>
+                <label for="email"></label><br>
+                <input type="text" id="email" class="loginForm" name="email"><br>
+                <span id="password" class="errorMsg red-text"></span><br>
+
+                <p class="loginFormTitles">Password:</p>
+                <label for="password"></label><br>
+                <input type="text" id="password" class="loginForm" name="password"><br>
+                <span id="email" class="errorMsg red-text"></span><br>
+
+
+                <label for="disclaimer" id="disclaimer">
+                    <input type="checkbox" />
+                    <p>By providing your phone number, you consent to its use
+                        exclusively for the purpose of logging into your account. We will never contact you for any
+                        other reason or share your number third parties.</p>
+                </label>
+
                 <span id="disclaimerError" class="errorMsg red-text"></span><br>
                 <input type="button" id="validateBtn" class="button" value="Submit">
             </form>
