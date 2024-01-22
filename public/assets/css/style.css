@@ -44,7 +44,7 @@ body {
   /* color: rgb(233, 242, 255); */
 }
 
-.loginDiv {
+.signupDiv, .loginDiv {
   margin: 2rem 15rem;
   padding: 2rem 10rem;
   background-color: rgb(220, 220, 238);
@@ -67,18 +67,6 @@ body {
 
 .errorMsg {
   font-size: .8rem;
-}
-
-#disclaimer {
-  font-size: .75rem; 
-  display: flex;
-  align-items: center;
-}
-
-#disclaimer input[type="checkbox"] {
-  margin-right: .5rem; /* Adjust the margin as needed */
-  margin-top: .5rem; /* Adjust the margin-top to center with the first line */
-  align-self: flex-start;
 }
 
 .button {

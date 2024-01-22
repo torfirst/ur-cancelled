@@ -7,6 +7,14 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/login', (req, res) => {
+  res.render('login', {
+  // var em = req.body.email;
+  // res.render('main', { email:em });
+
+  });
+});
+
 router.get('/all', (req, res) => {
   res.render('all');
 });
