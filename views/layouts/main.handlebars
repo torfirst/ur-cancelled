@@ -12,13 +12,17 @@
 <body>
     <header>
         <h1>YOU'RE <span class="red-text">CANCELLED</span>.</h1>
-
-        <!-- Only display the logout button if the user is logged in -->
-        {{#if logged_in}}
         <nav>
-            <button class="btn" id="logout">logout</button>
+            {{#if showProfileBtn}}
+            <button class="button" onclick="">Profile</button>
+            {{/if}}
+            {{#if showBackBtn}}
+            <button class="button" onclick="">Back</button>
+            {{/if}}
+            {{#if logged_in}}
+            <button class="button" id="logout">Logout</button>
+            {{/if}}
         </nav>
-        {{/if}}
     </header>
     <main>
         {{{ body }}}

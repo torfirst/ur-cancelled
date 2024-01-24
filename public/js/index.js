@@ -2,8 +2,6 @@ const loginDiv = document.querySelector('.loginDiv');
 const emailForm = document.getElementById('emailForm');
 const emailInput = document.getElementById('email');
 const emailError = document.getElementById('emailError');
-const disclaimerCheckbox = document.getElementById('disclaimerCheckbox');
-const disclaimerError = document.getElementById('disclaimerError');
 const validateBtn = document.getElementById('validateBtn');
 
 emailInput.addEventListener('input', (event) => {
@@ -30,21 +28,15 @@ emailInput.addEventListener('input', (event) => {
     event.target.value = formattedValue;
 
     // Clear error message when the user starts typing again
-    phoneNumberError.textContent = '';
+    emailError.textContent = '';
 });
 
 validateBtn.addEventListener('click', (event) => {
     let hasPhoneNumberError = false;
-    let hasDisclaimerError = false;
 
     if (phoneNumberInput.value.length !== 10) {
-        phoneNumberError.textContent = 'Please enter a valid 10-digit phone number.';
+        phoneNumberError.textContent = 'Please enter a valid email address.';
         hasPhoneNumberError = true;
-    }
-
-    if (!disclaimerCheckbox.checked) {
-        disclaimerError.textContent = 'Please agree to the disclaimer.';
-        hasDisclaimerError = true;
     }
 
     if (hasPhoneNumberError || hasDisclaimerError) {
