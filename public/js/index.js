@@ -1,6 +1,6 @@
 const loginDiv = document.querySelector('.loginDiv');
 const emailForm = document.getElementById('emailForm');
-const emailInput = document.getElementById('email');
+const emailInput = document.getElementById('emailInput');
 const emailError = document.getElementById('emailError');
 const validateBtn = document.getElementById('validateBtn');
 
@@ -31,21 +31,41 @@ emailInput.addEventListener('input', (event) => {
     emailError.textContent = '';
 });
 
-validateBtn.addEventListener('click', (event) => {
-    let hasPhoneNumberError = false;
+// validateBtn.addEventListener('click', (event) => {
+//     let hasError = false;
 
-    if (phoneNumberInput.value.length !== 10) {
-        phoneNumberError.textContent = 'Please enter a valid email address.';
-        hasPhoneNumberError = true;
+//     if (emailInput.value.length < 9) {
+//         event.preventDefault();
+//         emailError.textContent = 'Please enter a valid email address.';
+//         hasError = true;
+//     }
+
+//     if (emailError || passwordError) {
+//         event.preventDefault();
+//     }
+// });
+
+function validateEmail(email) {
+    // Regular expression for basic email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailRegex.test(email)) {
+        // Additional check for characters before '@' and after '.'
+        var atIndex = email.indexOf('@');
+        var dotIndex = email.lastIndexOf('.');
+
+        if (atIndex > 0 && dotIndex > atIndex + 1 && dotIndex < email.length - 1) {
+            return true; // Email is valid
+        }
     }
 
-    if (hasPhoneNumberError || hasDisclaimerError) {
-        event.preventDefault();
-    }
-});
+    return false; // Email is invalid
+}
 
-// const authSuccess = () => {
-//     loginDiv.classList.add('hide');
-//     homePage.classList.remove('hide');
-// }
+if (validateEmail(emailInput)) {
+    // check password validation
+} else {
+    emailError.textContent = 'Please enter a valid email address.';
+}
 
+// if email and password pass, home.handlebars will load in.

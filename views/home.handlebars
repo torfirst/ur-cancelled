@@ -12,6 +12,7 @@
         <h3 class="eventPageTitle">My Events</h3>
         <h6 class="welcomeMsg">Welcome, User {{this.firstName}}</h6>
     </div> --}}
+
     <div class="eventCard">
         <div class="eventHeading">
             <h1 id="eventName">Event Name {{event}}</h1>
@@ -30,8 +31,8 @@
         <h5>Who's Going?</h5>
         <div class="flex-container cardBtnDiv">
             <div class="participantDiv">
-                <div class="flex-item participant">{{user}} User 1</div>
-                <div class="flex-item participant">{{user}} User 2</div>
+                <div class="flex-item participant">{{user}} {{email}} User 1 / user@email.com</div>
+                <div class="flex-item participant">{{user}} {{email}} User 2 / user@example.com</div>
             </div>
             <div>
                 <div class="flex-item">
