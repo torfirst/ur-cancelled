@@ -1,0 +1,39 @@
+<div class="mainContainer">
+    <h3>My Profile</h3>
+    <div class="profileDiv">
+        <form id="updateProfile" method="post">
+
+            <p class="profileTitles">First Name: {{firstName}} John</p><br>
+            <label for="firstNameInput"></label>
+            <input type="text" id="firstNameInput" class="loginForm" name="firstName"><br>
+
+            <p class="profileTitles">Last Name: {{lastName}} Doe</p><br>
+            <label for="lastNameInput"></label>
+            <input type="text" id="lastNameInput" class="loginForm" name="lastName"><br>
+
+            <p class="profileTitles">Email Address: {{email}} johnny@doe.gov</p><br>
+            <label for="emailInput"></label>
+            <input type="text" id="emailInput" class="loginForm" name="email"><br>
+
+            <p class="profileTitles passDiv">Password: ***** </p>
+
+            <div class="flex-container">
+                <div>
+                    <label for="passwordInput"></label><br>
+                    <input type="text" id="passwordInput" class="loginForm" name="password">
+                    <span id="email" class="errorMsg red-text"></span>
+                </div>
+                <div>
+                    <label for="confirmPasswordInput"></label><br>
+                    <input type="text" id="confirmPasswordInput" class="loginForm"><br>
+                    <span id="email" class="errorMsg red-text"></span><br>
+                </div>
+            </div>
+            <div class="submitBtnDiv">
+                <input type="button" id="updateProfileBtn" class="button" value="Save">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/public/assets/js/login.js"></script>
