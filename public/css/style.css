@@ -16,17 +16,30 @@
 
 header {
   margin: 0;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 1rem 1rem;
   text-align: center;
   background-color: var(--lightColor);
 }
 
-h3{
+nav {
+  padding: 0 3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav button {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+h3 {
   color: var(--lightColor);
+  text-align: center;
 }
 
 h1 {
   font-size: 1.75rem;
+  margin: 0;
 }
 
 .red-text {
@@ -38,23 +51,51 @@ body {
   background-color: var(--bgColor);
 }
 
+input {
+  border: 1px solid grey;
+}
+
 .mainContainer {
   margin: 2rem 0;
   text-align: center;
-  /* color: rgb(233, 242, 255); */
+  width: 100%;
 }
 
-.signupDiv, .loginDiv {
+.signupDiv,
+.loginDiv,
+.profileDiv {
   margin: 2rem 15rem;
   padding: 2rem 10rem;
   background-color: rgb(220, 220, 238);
-  border: 2px solid white;
   border-radius: 15px;
 }
 
-.loginFormTitles {
+form label {
+  display: none;
+}
+
+#updateProfile {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+#updateProfileBtn {
+  justify-content: center;
+}
+
+.formTitles {
   margin: -.5rem 1rem;
   padding: 0 5rem;
+}
+
+.profileTitles {
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.passDiv {
+  margin-bottom: 0;
 }
 
 .loginForm {
@@ -74,7 +115,7 @@ body {
   background-color: #4D4AE8;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
   border: 1px solid #4D4AE8;
-  border-radius: 1rem;
+  border-radius: 2rem;
   box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
   box-sizing: border-box;
   color: #FFFFFF;
@@ -83,7 +124,7 @@ body {
   font-family: Inter, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1;
   padding: .5rem 1rem;
   text-align: center;
   text-transform: none;
@@ -126,4 +167,157 @@ body {
   box-shadow: none;
   opacity: .65;
   pointer-events: none;
+}
+
+.eventTitleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+}
+
+.spacer {
+  justify-content: flex-start;
+  padding-left: 3.5rem;
+  opacity: 0;
+}
+
+.eventPageTitle {
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.welcomeMsg {
+  color: grey;
+  /* justify-content: flex-end; */
+  font-size: .8rem;
+  text-align: right;
+  /* align-items: flex-end; */
+  padding-right: 4.5rem;
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+
+.eventCard {
+  margin: 0 4rem;
+  padding: 0 4rem;
+  background-color: var(--lightColor);
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+.eventHeading {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.eventName {
+  justify-content: flex-start;
+}
+
+.eventDate {
+  justify-content: flex-end;
+}
+
+.eventDescript {
+  text-align: left;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.flex-item {
+  padding: .3rem;
+}
+
+.participant {
+  color: rgb(77, 64, 196);
+  border-radius: 2rem;
+  font-size: 1rem;
+  align-items: bottom;
+}
+
+.participantDiv {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+}
+
+.cardBtnDiv {
+  margin-bottom: 1rem;
+}
+
+.btnStyle {
+  appearance: button;
+  width: 7rem;
+  background-color: var(--bgColor);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.236), rgba(255, 255, 255, 0));
+  border: 1px solid var(--bgColor);
+  border-radius: 2rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btnStyle:focus:not(:focus-visible),
+.btnStyle:focus {
+  outline: 0;
+}
+
+.btnStyle:hover {
+  background-color: #0f0e6c;
+  border-color: #0f0e6c;
+}
+
+.btnStyle:focus {
+  background-color: #2c2b50;
+  border-color: #2c2b50;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+.btnStyle:active {
+  background-color: #131266;
+  background-image: none;
+  border-color: #131266;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.btnStyle:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+.btnStyle:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: .65;
+  pointer-events: none;
+}
+
+#logout {
+  width: 5.5rem;
+  display: flex;
+  justify-content: left;
 }

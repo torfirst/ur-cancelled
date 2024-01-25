@@ -1,5 +1,52 @@
-<h1>Welcome, {{name}}</h1>
+{{!-- {{#each user}}
+<h6 class="welcomeMsg">Welcome, {{this.firstName}}</h6>
+{{/each}} --}}
 
-{{#each user}}
-<h1>Welcome, {{this.firstName}}</h1>
-{{/each}}
+<div class="">
+
+    <h6 class="welcomeMsg">Welcome, User {{this.firstName}}</h6>
+    <h3 class="eventPageTitle">My Events</h3>
+
+    {{!-- <div class="eventTitleDiv">
+        <div class="spacer">Welcome, {{this.firstName}}</div>
+        <h3 class="eventPageTitle">My Events</h3>
+        <h6 class="welcomeMsg">Welcome, User {{this.firstName}}</h6>
+    </div> --}}
+
+    <div class="eventCard">
+        <div class="eventHeading">
+            <h1 id="eventName">Event Name {{event}}</h1>
+            <h1 id="eventDate">Event Date {{eventDate}}</h1>
+        </div>
+        <div class="eventDescript">
+            <p>{{description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                officia
+                deserunt mollit anim id est laborum.</p>
+        </div>
+        <h5>Who's Going?</h5>
+        <div class="flex-container cardBtnDiv">
+            <div class="participantDiv">
+                <div class="flex-item participant">{{user}} {{email}} User 1 / user@email.com</div>
+                <div class="flex-item participant">{{user}} {{email}} User 2 / user@example.com</div>
+            </div>
+            <div>
+                <div class="flex-item">
+                    <input type="button" id="editEventBtn" class="btnStyle" value="Edit Event">
+                </div>
+                <div class="flex-item">
+                    <input type="button" id="cancelBtn" class="btnStyle" value="Cancel">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="/public/js/home.js"></script>

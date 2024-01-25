@@ -1,10 +1,11 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  res.render('login', {
+  res.render('home', {
     name: '',
     // user: userData,
-    logged_in: false,
+    logged_in: true,
+    showProfileBtn: true,
   });
 });
 
