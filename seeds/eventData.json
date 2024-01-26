@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Beach Day",
+    "description": "Gonna build sand castles",
+    "dateOfEvent": "2/25/2024",
+    "user_id_1": 1,
+    "user_id_2": 2,
+    "eventStatus": "Scheduled",
+    "User_1_hasCancelled": false,
+    "User_2hasCancelled": false
+  },
+  {
+    "title": "Bowling Day",
+    "description": "hit some pins",
+    "dateOfEvent": "3/30/2024",
+    "user_id_1": 2,
+    "user_id_2": 3,
+    "eventStatus": "Scheduled",
+    "User_1_hasCancelled": false,
+    "User_2hasCancelled": false
+  },
+  {
+    "title": "Capy Day",
+    "description": "going to the zoo to see capybaras",
+    "dateOfEvent": "5/10/2024",
+    "user_id_1": 1,
+    "user_id_2": 3,
+    "eventStatus": "Scheduled",
+    "User_1_hasCancelled": false,
+    "User_2hasCancelled": false
+  }
+]

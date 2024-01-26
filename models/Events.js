@@ -55,4 +55,4 @@ Event.init(
   }
 );
 
-module.exports = User;
+module.exports = Event;
