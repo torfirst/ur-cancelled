@@ -12,22 +12,21 @@
 
             <div class="content addEventFormStyle ">
                 <form id="addEventForm" action="/submit" method="post">
-                <h3 class="eventFormTitle">Schedule New Event</h3>
+                    <h3 class="eventFormTitle">Schedule New Event</h3>
                     <label for="inviteEmailInput" class="eventFormLabel">Enter email of who you're going
                         with:</label><br>
-                    <input type="text" id="inviteEmailInput" name="inputField">
+                    <input type="text" id="inviteEmailInput" name="eventUserInvite">
 
                     <br>
                     <label for="eventTitleInput" class="eventFormLabel">Event Title:</label><br>
-                    <input type="text" id="eventTitleInput" name="inputField">
+                    <input type="text" id="eventTitleInput" name="eventTitle">
 
                     <br><label for="eventDate" class="eventFormLabel">Event date:</label><br>
-                    <input type="date" id="eventDate" name="eventDate" value="2018-07-22" min="2023-01-01"
-                        max="2999-12-31" />
+                    <input type="date" id="eventDate" name="eventDate" min="2023-01-01" max="2999-12-31" />
                     <br>
 
                     <label for="eventDescript" class="eventFormLabel">Description:</label><br>
-                    <input type="text" id="inviteEmailInput" name="inputField"><br>
+                    <input type="text" id="inviteEmailInput" name="eventDescript"><br>
 
                     <div class="scheduleBtn">
                         <button type="submit" class="button">Schedule</button>
@@ -38,17 +37,12 @@
         </div>
     </div>
 
-    {{!-- <div class="eventTitleDiv">
-        <div class="spacer">Welcome, {{this.firstName}}</div>
-        <h3 class="eventPageTitle">My Events</h3>
-        <h6 class="welcomeMsg">Welcome, User {{this.firstName}}</h6>
-    </div> --}}
-
     <div class="eventCard">
         <div class="eventHeading">
-            <h1 id="eventName">Event Name {{event}}</h1>
+            <h1 id="editEventName">Event Name {{event}}</h1>
             <h1 id="eventDate">Event Date {{eventDate}}</h1>
         </div>
+
         <div class="eventDescript">
             <p>{{description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut
@@ -72,21 +66,65 @@
                 <div class="flex-item">
                     <input type="button" id="cancelBtn" class="btnStyle" value="Cancel">
                 </div>
-
             </div>
         </div>
+    </div>
+    <div class="eventCard">
+        <div id="eventHeading" class="eventHeading hide">
+            <h1 id="eventName">Event Name {{event}}</h1>
+            <h1 id="eventDate">Event Date {{eventDate}}</h1>
+        </div>
 
+        <div id="editEventHeading">
+            <label for="eventNameInput"></label>
+            <input type="text" id="eventNameInput" name="eventTitle">
+            <label for="eventDate"></label>
+            <input type="text" id="eventDateInput" name="eventDate">
+        </div>
+        <div id="eventDescript" class="eventDescript hide">
+            <p>{{description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                officia
+                deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="eventDescript" id="editEventDescript">
+            <label for="eventDescript"></label>
+            <textarea type="text" id="eventDescriptInput" name="eventDescript"></textarea>
+        </div> {{!-- remove hide from #editEventHeading, #editEventDescript, #editInvitedUser
+
+        add hide to #eventHeading, #eventDescript, #invitedUser--}}
+        <h5>Who's Going?</h5>
+        <div class="flex-container cardBtnDiv">
+            <div class="participantDiv">
+                <div class="flex-item participant">{{user}} {{email}} User 1 / user@email.com</div>
+                <div id="invitedUser" class="flex-item participant hide">{{user}} {{email}} User 2 / user@example.com
+                </div>
+                <input type="text" id="editInvitedUser" name="eventDate">
+            </div>
+            <div>
+                <div class="flex-item">
+                    <input type="button" id="editEventBtn" class="btnStyle" value="Edit Event">
+                </div>
+                <div class="flex-item">
+                    <input type="button" id="cancelBtn" class="btnStyle" value="Cancel">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+    const editEventBtn = document.getElementById('editEventBtn');
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
+    const coll = document.getElementsByClassName("collapsible");
+
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", () => {
+            coll[i].classList.toggle("active");
+            const content = coll[i].nextElementSibling;
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
                 content.classList.remove("open");
@@ -96,6 +134,6 @@
             }
         });
     }
-</script>
 
+</script>
 <script src="/public/js/home.js"></script>

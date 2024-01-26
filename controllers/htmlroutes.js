@@ -2,32 +2,36 @@ const router = require('express').Router();
 
 router.get('/', (req, res) => {
   res.render('home', {
-    name: '',
+    // name: '',
     // user: userData,
     logged_in: true,
     showProfileBtn: true,
   });
 });
 
-// router.get('/login', (req, res) => {
-//   res.render('login', {
-//   var em = req.body.email;
-//   var pw = req.body.password;
-//   res.render('main', { email: em, password: pw });
+router.get('/login', (req, res) => {
+  res.render('login', {
+    logged_in: false,
+    showProfileBtn: false,
+  });
+});
 
-//   });
-// });
+router.get('/signup', (req, res) => {
+  res.render('signup', {
+    // pageTitle: 'Sign Up',
+    // body: 'signup',
+    logged_in: false,
+    showProfileBtn: false,
+  });
+});
 
-// router.get('/signup', (req, res) => {
-//   res.render('views/signup', {
-//     pageTitle: 'Sign Up',
-//     body: 'signup',
-//     logged_in: false,
-//   });
-// });
-
-router.get('/all', (req, res) => {
-  res.render('all');
+router.get('/profile', (req, res) => {
+  res.render('profile', {
+    // pageTitle: 'Sign Up',
+    // body: 'signup',
+    logged_in: true,
+    showProfileBtn: false,
+  });
 });
 
 module.exports = router;
