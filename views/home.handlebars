@@ -2,10 +2,41 @@
 <h6 class="welcomeMsg">Welcome, {{this.firstName}}</h6>
 {{/each}} --}}
 
-<div class="">
-
-    <h6 class="welcomeMsg">Welcome, User {{this.firstName}}</h6>
+<div>
     <h3 class="eventPageTitle">My Events</h3>
+    <div class="eventsDiv">
+        <h6 class="welcomeMsg">Welcome, User {{this.firstName}}</h6>
+        <div class="addEventBtnDiv">
+
+            <button class="button addEventBtn collapsible" onclick="toggleCollapsible()">Add Event</button>
+
+            <div class="content addEventFormStyle ">
+                <form id="addEventForm" action="/submit" method="post">
+                <h3 class="eventFormTitle">Schedule New Event</h3>
+                    <label for="inviteEmailInput" class="eventFormLabel">Enter email of who you're going
+                        with:</label><br>
+                    <input type="text" id="inviteEmailInput" name="inputField">
+
+                    <br>
+                    <label for="eventTitleInput" class="eventFormLabel">Event Title:</label><br>
+                    <input type="text" id="eventTitleInput" name="inputField">
+
+                    <br><label for="eventDate" class="eventFormLabel">Event date:</label><br>
+                    <input type="date" id="eventDate" name="eventDate" value="2018-07-22" min="2023-01-01"
+                        max="2999-12-31" />
+                    <br>
+
+                    <label for="eventDescript" class="eventFormLabel">Description:</label><br>
+                    <input type="text" id="inviteEmailInput" name="inputField"><br>
+
+                    <div class="scheduleBtn">
+                        <button type="submit" class="button">Schedule</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 
     {{!-- <div class="eventTitleDiv">
         <div class="spacer">Welcome, {{this.firstName}}</div>
@@ -48,5 +79,24 @@
     </div>
 </div>
 
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove("open");
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add("open");
+            }
+        });
+    }
+
+</script>
 
 <script src="/public/js/home.js"></script>

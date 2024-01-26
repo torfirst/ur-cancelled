@@ -8,6 +8,7 @@
   padding: 0;
   font-size: 1.25rem;
   font-family: Verdana, sans-serif;
+  /* border: 1px solid red; */
 }
 
 .hide {
@@ -32,6 +33,10 @@ nav button {
   margin-left: 1rem;
 }
 
+.eventFormTitle{
+  color: black;
+}
+
 h3 {
   color: var(--lightColor);
   text-align: center;
@@ -53,6 +58,7 @@ body {
 
 input {
   border: 1px solid grey;
+  border-radius: 25px;
 }
 
 .mainContainer {
@@ -67,7 +73,7 @@ input {
   margin: 2rem 15rem;
   padding: 2rem 10rem;
   background-color: rgb(220, 220, 238);
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 form label {
@@ -185,20 +191,85 @@ form label {
 
 .eventPageTitle {
   justify-content: center;
-  margin-bottom: 2rem;
-  margin-top: 0;
+  margin-bottom: 0;
+  margin-top: 2rem;
 }
 
 .welcomeMsg {
   color: grey;
-  /* justify-content: flex-end; */
   font-size: .8rem;
   text-align: right;
-  /* align-items: flex-end; */
-  padding-right: 4.5rem;
+  padding-left: 4.5rem;
   padding-top: 1rem;
   margin-bottom: 0;
 }
+
+.eventsDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addEventBtnDiv {
+  text-align: right;
+  padding-right: 4rem;
+  align-items: center;
+  margin-top: 0;
+  padding-bottom: 1rem;
+}
+
+.addEventBtn {
+  line-height: .5rem;
+  font-size: .8rem;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.content.open {
+  margin-top: 1rem;
+}
+
+.addEventFormStyle {
+  background-color: var(--lightColor);
+  border-radius: 15px;
+  text-align: left;
+}
+
+.addEventFormStyle input, .eventFormLabel, .scheduleBtn, .eventFormTitle {
+  margin: .5rem 1.25rem;
+}
+
+.eventFormLabel {
+  display: inline-block;
+}
+
+.addEventFormStyle input {
+  padding: .25rem 1rem;
+}
+
+/* 
+.collapsible {
+  color: var(--heading);
+  border: none;
+}
+
+.collapsible h2:hover {
+  color: #e9b259;
+}
+
+.collapsible h2:after {
+  content: '\002B';
+  color: var(--heading);
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.active h2:after {
+  content: "\2212";
+} */
 
 .eventCard {
   margin: 0 4rem;
@@ -321,3 +392,4 @@ form label {
   display: flex;
   justify-content: left;
 }
+
