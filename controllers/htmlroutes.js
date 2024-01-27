@@ -41,6 +41,7 @@ router.get('/signup', (req, res) => {
     showProfileBtn: false,
     showBackBtn: false,
     includeScript: 'signup.js',
+  });
 });
 
 router.get('/profile', (req, res) => {
