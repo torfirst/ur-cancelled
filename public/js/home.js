@@ -19,7 +19,6 @@ const editEvent = () => {
     editInvitedUser.classList.remove('hide');
 };
 
-editEventBtn.addEventListener('click', editEvent);
 
 const updateEventDetails = () => {
     editEventBtn.classList.remove('hide');
@@ -31,9 +30,6 @@ const updateEventDetails = () => {
     editEventDescript.classList.add('hide');
     editInvitedUser.classList.add('hide');
 }
-
-updateEventBtn.addEventListener('click', updateEventDetails);
-
 
 const coll = document.getElementsByClassName("collapsible");
 
@@ -50,3 +46,7 @@ for (let i = 0; i < coll.length; i++) {
         }
     });
 }
+
+editEventBtn.addEventListener('click', editEvent);
+
+updateEventBtn.addEventListener('click', updateEventDetails);
