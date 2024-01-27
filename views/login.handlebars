@@ -1,19 +1,26 @@
-<div class="mainContainer">
-    <h3>Log In Below</h3>
-    <div class="loginDiv">
-        <form id="emailForm" action="/login" method="post">
-            <p class="formTitles">Email Address:</p>
-            <label for="email"></label><br>
-            <input type="text" id="emailInput" class="loginForm" name="email"><br>
-            <span id="email" class="errorMsg red-text"></span><br>
+<div class='mainContainer'>
+  <h3>Log In Below</h3>
+  <div class='loginDiv'>
+    <form id='emailForm'>
+      <p class='formTitles'>Email Address:</p>
+      <label for='email'></label><br />
+      <input type='text' id='emailInput' class='loginForm' name='email' /><br />
+      <span id='email' class='errorMsg red-text'></span><br />
 
-            <p class="formTitles">Password:</p>
-            <label for="password"></label><br>
-            <input type="text" id="passwordInput" class="loginForm" name="password"><br>
-            <span id="password" class="emailError errorMsg red-text"></span><br>
+      <p class='formTitles'>Password:</p>
+      <label for='password'></label><br />
+      <input
+        type='text'
+        id='passwordInput'
+        class='loginForm'
+        name='password'
+      /><br />
+      <span id='password' class='emailError errorMsg red-text'></span><br />
 
             <input type="button" id="validateBtn" class="button" value="Submit">
         </form>
         <a class="linkStyle" href="/signup">Sign In Instead</a>
     </div>
 </div>
+
+<script src="/public/js/login.js"></script>
