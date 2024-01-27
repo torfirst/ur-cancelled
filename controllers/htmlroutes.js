@@ -1,22 +1,37 @@
 const router = require('express').Router();
+const { Event } = require('../models');
+const { Op } = require('sequelize');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  let events = [];
+  if (req.session.user_id) {
+    console.log('You are logged in user #', req.session.user_id);
+    const eventData = await Event.findAll({
+      where: {
+        [Op.or]: [
+          { user_id_1: req.session.user_id },
+          { user_id_2: req.session.user_id },
+        ],
+      },
+    });
+    events = eventData.map((event) => event.get({ plain: true }));
+  }
+  console.log(events);
   res.render('home', {
     name: '',
     // user: userData,
+    events,
     logged_in: true,
     showProfileBtn: true,
   });
 });
 
-// router.get('/login', (req, res) => {
-//   res.render('login', {
-//   var em = req.body.email;
-//   var pw = req.body.password;
-//   res.render('main', { email: em, password: pw });
-
-//   });
-// });
+router.get('/login', (req, res) => {
+  res.render('login', {
+    // var em = req.body.email;
+    // var pw = req.body.password;
+  });
+});
 
 // router.get('/signup', (req, res) => {
 //   res.render('views/signup', {

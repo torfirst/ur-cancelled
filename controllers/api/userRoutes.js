@@ -39,10 +39,10 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+      console.log(req.session);
+
       res.json({ user: userData, message: 'You are now logged in!' }); //redirect to home instead of showing error message
     });
-
   } catch (err) {
     res.status(400).json(err);
   }

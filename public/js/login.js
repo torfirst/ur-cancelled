@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
-
+  console.log('hello');
   // Collect values from the login form
   const email = document.querySelector('#emailInput').value.trim();
   const password = document.querySelector('#passwordInput').value.trim();
@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the home page
-      document.location.replace('/home');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -23,6 +23,5 @@ const loginFormHandler = async (event) => {
 };
 
 document
-  .querySelector('.login-form')
+  .querySelector('#emailForm')
   .addEventListener('submit', loginFormHandler);
-
