@@ -11,8 +11,6 @@
   /* border: 1px solid red; */
 }
 
-
-
 header {
   margin: 0;
   padding: 3rem 1rem 1rem 1rem;
@@ -48,6 +46,10 @@ h1 {
 .red-text {
   color: red;
   font-size: inherit;
+}
+
+.linkStyle{
+  text-align: center;
 }
 
 body {
@@ -392,5 +394,6 @@ form label {
 }
 
 .hide {
-  display: none;
+  display: none !important;
+  visibility: hidden;
 }

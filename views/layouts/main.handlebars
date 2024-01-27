@@ -14,10 +14,10 @@
         <h1>YOU'RE <span class="red-text">CANCELLED</span>.</h1>
         <nav>
             {{#if showProfileBtn}}
-            <button class="button" onclick="">Profile</button>
+            <button class="button" id="profileBtn">Profile</button>
             {{/if}}
             {{#if showBackBtn}}
-            <button class="button" onclick="">Back</button>
+            <button class="button" id="backBtn">Back</button>
             {{/if}}
             {{#if logged_in}}
             <button class="button" id="logout">Logout</button>
@@ -30,14 +30,13 @@
     <footer>
 
     </footer>
-    <!-- Only include the logout script if the user is logged in -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
 
-    {{!-- {{#if}}
-    <script src="/public/js/home.js"></script>
-    {{/if}} --}}
+    {{#if includeScript}}
+    <script src="/public/js/{{includeScript}}"></script>
+    {{/if}}
 </body>
 
 </html>
