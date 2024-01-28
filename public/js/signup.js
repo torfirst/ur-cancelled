@@ -44,19 +44,6 @@ const maskConfirmPass = () => {
   }
 }
 
-const checkPasswordsMatch = () => {
-  const password = passwordInput.value;
-  const confirmPassword = confirmPasswordInput.value;
-
-  if (password === confirmPassword) {
-    // Passwords match, you can perform additional actions if needed
-    console.log("Passwords match");
-  } else {
-    // Passwords do not match, you can handle this case
-    console.log("Passwords do not match");
-  }
-}
-
 function comparePass() {
   if (confirmPass.value) {
     if (pass.value != confirmPass.value) {
