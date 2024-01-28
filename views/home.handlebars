@@ -18,7 +18,7 @@
                     <input type='text' id='eventTitleInput' name='inputField' />
 
                     <br /><label for='eventDate' class='eventFormLabel'>Event date:</label><br />
-                    <input type='datetime-local' id='eventDate' name='eventDate' value='2018-07-22' min='2023-01-01'
+                    <input type='datetime-local' id='eventDate' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
                         max='2999-12-31' />
                     <br />
 
@@ -45,7 +45,7 @@
             <label for="eventNameInput"></label>
             <input type="text" id="eventNameInput" name="eventTitle">
             <label for="eventDate"></label>
-            <input type='datetime-local' id='eventDateInput' name='eventDate' value='2018-07-22' min='2023-01-01'
+            <input type='datetime-local' id='eventDateInput' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
                 max='2999-12-31' />
           
         </div>
@@ -61,11 +61,11 @@
         <h5>Who's Going?</h5>
         <div class='flex-container cardBtnDiv'>
             <div class='participantDiv'>
-                <div class='flex-item participant'>{{user}}
-                    {{email}}
+                <div class='flex-item participant'>{{user.firstname}}
+                    {{user.email}}
                     User 1 / user@email.com</div>
-                <div id="invitedUser" class="flex-item participant">{{user}}
-                    {{email}}
+                <div id="invitedUser" class="flex-item participant">{{user.firstname}}
+                    {{user.email}}
                     User 2 / user@example.com</div>
 
                 <input type="text" id="editInvitedUser" name="eventDate" class="hide">
@@ -73,11 +73,11 @@
             <div>
                 <div class='flex-item'>
                     <input type='button' id='editEventBtn' class='btnStyle' value='Edit Event' />
-                    <input type="button" id="updateEventBtn" class="hide btnStyle" value="Update">  
+                    <input type="submit" id="updateEventBtn" class="hide btnStyle" value="Update">  
                 </div>
                 <div class='flex-item'>
                     <input type='button' id='cancelChangesBtn' class='hide btnStyle' value='Cancel Changes' />
-                    <input type='button' id='cancelBtn' class='btnStyle' value='Cancel' />
+                    <input type='submit' id='cancelBtn' class='btnStyle' value='Cancel' />
                 </div>
 
             </div>
