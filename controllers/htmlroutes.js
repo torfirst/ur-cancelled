@@ -30,8 +30,6 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
   res.render('login', {
-    // var em = req.body.email;
-    // var pw = req.body.password;
     includeScript: 'login.js',
   });
 });
@@ -43,5 +41,18 @@ router.get('/signup', (req, res) => {
   });
 });
 
+router.get('/profile', (req, res) => {
+  res.render('profile', {
+    logged_in: false,
+    includeScript: 'profile.js',
+  });
+});
+
+router.get('/logout', (req, res) => {
+  res.render('logout', {
+    logged_in: false,
+    includeScript: 'logout.js',
+  });
+});
 
 module.exports = router;

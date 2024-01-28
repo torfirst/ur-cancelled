@@ -5,7 +5,7 @@
       <p class='formTitles'>Email Address:</p>
       <label for='email'></label><br />
       <input type='text' id='emailInput' class='loginForm' name='email' /><br />
-      <span id='email' class='errorMsg red-text'></span><br />
+      <span id='email' class='errorMsg red-text'></span><br /><br>
 
       <p class='formTitles'>Password:</p>
       <label for='password'></label><br />
@@ -14,9 +14,8 @@
         id='passwordInput'
         class='loginForm'
         name='password'
-        oninput="maskPassword(this.value)"
       /><br />
-      <span id='password' class='emailError errorMsg red-text'></span><br />
+      <span id='password' class='errorMsg red-text'></span><br />
 
       <input type='submit' id='validateBtn' class='button' value='Submit' />
     </form>
@@ -24,6 +23,4 @@
     <a class='linkStyle' href='/signup'>Sign Up Instead</a>
   </div>
 </div>
-
-<script src='/js/login.js'></script>
 
