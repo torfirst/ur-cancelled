@@ -18,6 +18,7 @@
             {{/if}}
             {{#if showBackBtn}}
             <button class="button" id="backBtn">Back</button>
+
             {{/if}}
             {{#if logged_in}}
             <button class="button" id="logout">Logout</button>
@@ -34,9 +35,6 @@
     <script src="/js/logout.js"></script>
     {{/if}}
 
-    {{#if includeScript}}
-    <script src="/public/js/{{includeScript}}"></script>
-    {{/if}}
 </body>
 
 </html>

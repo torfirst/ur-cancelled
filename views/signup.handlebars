@@ -22,29 +22,3 @@
         <a class="linkStyle" href="/login">Log In Instead</a>
     </div>
 </div>
-<script>       function checkPasswordsMatch() {
-        var password = document.getElementById("passwordInput").value;
-        var confirmPassword = document.getElementById("confirmPasswordInput").value;
-
-        if (password !== confirmPassword) {
-            document.getElementById("confirmPassword").innerText = "Passwords do not match";
-        } else {
-            document.getElementById("confirmPassword").innerText = "";
-        }
-    }
-
-    function validateForm() {
-        var password = document.getElementById("passwordInput").value;
-        var confirmPassword = document.getElementById("confirmPasswordInput").value;
-
-        if (password !== confirmPassword) {
-            document.getElementById("confirmPassword").innerText = "Passwords do not match";
-            return false;
-        } else {
-            document.getElementById("confirmPassword").innerText = "";
-            return true;
-        }
-    }
-</script>
-{{!--
-<script src="/public/js/signup.js"></script> --}}
