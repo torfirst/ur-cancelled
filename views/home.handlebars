@@ -95,6 +95,7 @@
     const eventHeading = document.getElementById("eventHeading");
     const eventDescript = document.getElementById("eventDescript");
     const invitedUser = document.getElementById("invitedUser");
+    const cancelChangesBtn = document.getElementById('cancelChangesBtn');
     const cancelBtn = document.getElementById('cancelBtn');
     const editEventHeading = document.getElementById('editEventHeading');
     const editEventDescript = document.getElementById('editEventDescript');
@@ -109,8 +110,8 @@
         editEventHeading.classList.remove('hide');
         editEventDescript.classList.remove('hide');
         editInvitedUser.classList.remove('hide');
+        cancelBtn.disabled = true;
     };
-
 
     const updateEventDetails = () => {
         editEventBtn.classList.remove('hide');
@@ -136,7 +137,7 @@
 
     updateEventBtn.addEventListener('click', updateEventDetails);
     editEventBtn.addEventListener('click', editEvent);
-    cancelBtn.addEventListener('click', cancelChanges);
+    cancelChangesBtn.addEventListener('click', cancelChanges);
 
     const coll = document.getElementsByClassName("collapsible");
 

@@ -47,7 +47,7 @@ h1 {
   font-size: inherit;
 }
 
-.linkStyle{
+.linkStyle {
   text-align: center;
 }
 
@@ -259,13 +259,6 @@ form label {
   border-radius: 15px;
 }
 
-.eventHeading {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-
 .eventName {
   justify-content: flex-start;
 }
@@ -280,14 +273,22 @@ form label {
 }
 
 #editEventHeading {
+  width: 100%;
+  display: inline-block;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+#eventHeading {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
-  margin:  0;
 }
 
-#editEventHeading label, #editEventDescript label{
- display:none;
+
+#editEventHeading label,
+#editEventDescript label {
+  display: none;
 }
 
 #editEventDescript textarea {
@@ -384,6 +385,11 @@ form label {
   box-shadow: none;
   opacity: .65;
   pointer-events: none;
+}
+
+#cancelChangesBtn {
+  width: 8rem;
+  font-size: .8rem;
 }
 
 #logout {
