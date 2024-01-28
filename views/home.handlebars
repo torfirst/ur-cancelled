@@ -44,13 +44,10 @@
         <div id="editEventHeading" class="hide">
             <label for="eventNameInput"></label>
             <input type="text" id="eventNameInput" name="eventTitle">
-            <div class="editCancel">
-                <label for="eventDate"></label>
-                <input type='datetime-local' id='eventDateInput' name='eventDate' value='2018-07-22' min='2023-01-01'
-                    max='2999-12-31' />
-                <br />
-                <input type='button' id='cancelChangesBtn' class='btnStyle' value='Cancel Changes' />
-            </div>
+            <label for="eventDate"></label>
+            <input type='datetime-local' id='eventDateInput' name='eventDate' value='2018-07-22' min='2023-01-01'
+                max='2999-12-31' />
+          
         </div>
 
         <div id="eventDescript" class='eventDescript'>
@@ -76,9 +73,10 @@
             <div>
                 <div class='flex-item'>
                     <input type='button' id='editEventBtn' class='btnStyle' value='Edit Event' />
-                    <input type="button" id="updateEventBtn" class="btnStyle hide" value="Update">
+                    <input type="button" id="updateEventBtn" class="hide btnStyle" value="Update">  
                 </div>
                 <div class='flex-item'>
+                    <input type='button' id='cancelChangesBtn' class='hide btnStyle' value='Cancel Changes' />
                     <input type='button' id='cancelBtn' class='btnStyle' value='Cancel' />
                 </div>
 
@@ -88,96 +86,29 @@
     {{/each}}
 </div>
 
-<script>
-
-    const editEventBtn = document.getElementById('editEventBtn');
-    const updateEventBtn = document.getElementById('updateEventBtn');
-    const eventHeading = document.getElementById("eventHeading");
-    const eventDescript = document.getElementById("eventDescript");
-    const invitedUser = document.getElementById("invitedUser");
-    const cancelChangesBtn = document.getElementById('cancelChangesBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const editEventHeading = document.getElementById('editEventHeading');
-    const editEventDescript = document.getElementById('editEventDescript');
-    const editInvitedUser = document.getElementById('editInvitedUser');
-
-    const editEvent = () => {
-        editEventBtn.classList.add('hide');
-        updateEventBtn.classList.remove('hide');
-        eventHeading.classList.add('hide');
-        eventDescript.classList.add('hide');
-        invitedUser.classList.add('hide');
-        editEventHeading.classList.remove('hide');
-        editEventDescript.classList.remove('hide');
-        editInvitedUser.classList.remove('hide');
-        cancelBtn.disabled = true;
-    };
-
-    const updateEventDetails = () => {
-        editEventBtn.classList.remove('hide');
-        updateEventBtn.classList.add('hide');
-        eventHeading.classList.remove('hide');
-        eventDescript.classList.remove('hide');
-        invitedUser.classList.remove('hide');
-        editEventHeading.classList.add('hide');
-        editEventDescript.classList.add('hide');
-        editInvitedUser.classList.add('hide');
-    }
-
-    const cancelChanges = () => {
-        editEventBtn.classList.remove('hide');
-        updateEventBtn.classList.add('hide');
-        eventHeading.classList.remove('hide');
-        eventDescript.classList.remove('hide');
-        invitedUser.classList.remove('hide');
-        editEventHeading.classList.add('hide');
-        editEventDescript.classList.add('hide');
-        editInvitedUser.classList.add('hide');
-    }
-
-    updateEventBtn.addEventListener('click', updateEventDetails);
-    editEventBtn.addEventListener('click', editEvent);
-    cancelChangesBtn.addEventListener('click', cancelChanges);
-
-    const coll = document.getElementsByClassName("collapsible");
-
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", () => {
-            coll[i].classList.toggle("active");
-            const content = coll[i].nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                content.classList.remove("open");
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                content.classList.add("open");
-            }
-        });
-    }
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-  document.getElementById("cancelBtn").addEventListener("click", () => {
-  var duration = 5 * 1000;
-  var animationEnd = Date.now() + duration;
-  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    document.getElementById("cancelBtn").addEventListener("click", () => {
+        var duration = 5 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-  function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-  }
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
 
-  var interval = setInterval(function() {
-    var timeLeft = animationEnd - Date.now();
+        var interval = setInterval(function () {
+            var timeLeft = animationEnd - Date.now();
 
-    if (timeLeft <= 0) {
-      return clearInterval(interval);
-    }
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
 
-    var particleCount = 50 * (timeLeft / duration);
-    // since particles fall down, start a bit higher than random
-    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-  }, 250);
-  })
+            var particleCount = 50 * (timeLeft / duration);
+            // since particles fall down, start a bit higher than random
+            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+        }, 250);
+    })
 </script>

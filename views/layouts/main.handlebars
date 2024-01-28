@@ -1,39 +1,41 @@
 <html lang='en'>
 
-  <head>
+<head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='stylesheet' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <title>You're Cancelled.</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <h1>YOU'RE <span class='red-text'>CANCELLED</span>.</h1>
-      <nav>
-        {{#if showProfileBtn}}
-          <button class='button' id='profileBtn'>Profile</button>
-        {{/if}}
-        {{#if showBackBtn}}
-          <button class='button' id='backBtn'>Back</button>
+        <h1>YOU'RE <span class='red-text'>CANCELLED</span>.</h1>
+        <nav>
+            {{#if showProfileBtn}}
+            <button class='button' id='profileBtn'>Profile</button>
+            {{/if}}
+            {{#if showBackBtn}}
+            <button class='button' id='backBtn'>Back</button>
 
-        {{/if}}
-        {{#if logged_in}}
-          <button class='button' id='logout'>Logout</button>
-        {{/if}}
-      </nav>
+            {{/if}}
+            {{#if logged_in}}
+            <button class='button' id='logout'>Logout</button>
+            {{/if}}
+        </nav>
     </header>
     <main>
-      {{{body}}}
+        {{{body}}}
     </main>
     <footer>
 
     </footer>
     {{#if logged_in}}
-      <script src='/js/logout.js'></script>
+    <script src='/js/logout.js'></script>
     {{/if}}
-
-  </body>
+    {{#if includeScript}}
+    <script src="/js/{{includeScript}}"></script>
+    {{/if}}
+</body>
 
 </html>

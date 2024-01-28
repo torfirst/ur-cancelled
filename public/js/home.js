@@ -4,6 +4,8 @@ const updateEventBtn = document.getElementById('updateEventBtn');
 const eventHeading = document.getElementById("eventHeading");
 const eventDescript = document.getElementById("eventDescript");
 const invitedUser = document.getElementById("invitedUser");
+const cancelChangesBtn = document.getElementById('cancelChangesBtn');
+const cancelBtn = document.getElementById('cancelBtn');
 const editEventHeading = document.getElementById('editEventHeading');
 const editEventDescript = document.getElementById('editEventDescript');
 const editInvitedUser = document.getElementById('editInvitedUser');
@@ -17,8 +19,9 @@ const editEvent = () => {
     editEventHeading.classList.remove('hide');
     editEventDescript.classList.remove('hide');
     editInvitedUser.classList.remove('hide');
+    cancelChangesBtn.classList.remove('hide');
+    cancelBtn.classList.add('hide');
 };
-
 
 const updateEventDetails = () => {
     editEventBtn.classList.remove('hide');
@@ -29,7 +32,26 @@ const updateEventDetails = () => {
     editEventHeading.classList.add('hide');
     editEventDescript.classList.add('hide');
     editInvitedUser.classList.add('hide');
+    cancelChangesBtn.classList.add('hide');
+    cancelBtn.classList.remove('hide');
 }
+
+const cancelChanges = () => {
+    editEventBtn.classList.remove('hide');
+    updateEventBtn.classList.add('hide');
+    eventHeading.classList.remove('hide');
+    eventDescript.classList.remove('hide');
+    invitedUser.classList.remove('hide');
+    editEventHeading.classList.add('hide');
+    editEventDescript.classList.add('hide');
+    editInvitedUser.classList.add('hide');
+    cancelChangesBtn.classList.add('hide');
+    cancelBtn.classList.remove('hide');
+}
+
+updateEventBtn.addEventListener('click', updateEventDetails);
+editEventBtn.addEventListener('click', editEvent);
+cancelChangesBtn.addEventListener('click', cancelChanges);
 
 const coll = document.getElementsByClassName("collapsible");
 
@@ -47,6 +69,3 @@ for (let i = 0; i < coll.length; i++) {
     });
 }
 
-editEventBtn.addEventListener('click', editEvent);
-
-updateEventBtn.addEventListener('click', updateEventDetails);

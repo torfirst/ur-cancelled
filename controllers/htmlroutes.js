@@ -23,6 +23,8 @@ router.get('/', async (req, res) => {
     events,
     logged_in: true,
     showProfileBtn: true,
+    includeScript: 'home.js'
+    ,
   });
 });
 
@@ -30,19 +32,16 @@ router.get('/login', (req, res) => {
   res.render('login', {
     // var em = req.body.email;
     // var pw = req.body.password;
+    includeScript: 'login.js',
   });
 });
 
-// router.get('/signup', (req, res) => {
-//   res.render('views/signup', {
-//     pageTitle: 'Sign Up',
-//     body: 'signup',
-//     logged_in: false,
-//   });
-// });
-
-router.get('/all', (req, res) => {
-  res.render('all');
+router.get('/signup', (req, res) => {
+  res.render('signup', {
+    logged_in: false,
+    includeScript: 'signup.js',
+  });
 });
+
 
 module.exports = router;

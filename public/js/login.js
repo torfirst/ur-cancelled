@@ -23,6 +23,17 @@ const loginFormHandler = async (event) => {
   }
 };
 
+
 document
   .querySelector('#emailForm')
   .addEventListener('submit', loginFormHandler);
+  
+  function maskPassword() {
+    const passwordInput = document.getElementById('password');
+    const maskedPasswordInput = document.getElementById('maskedPassword');
+
+    const password = passwordInput.value;
+    const maskedPassword = '*'.repeat(password.length);
+
+    maskedPasswordInput.value = maskedPassword;
+  }

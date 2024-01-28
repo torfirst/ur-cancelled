@@ -14,13 +14,16 @@
         id='passwordInput'
         class='loginForm'
         name='password'
+        oninput="maskPassword(this.value)"
       /><br />
       <span id='password' class='emailError errorMsg red-text'></span><br />
 
       <input type='submit' id='validateBtn' class='button' value='Submit' />
     </form>
-    <a class='linkStyle' href='/signup'>Sign In Instead</a>
+    <br>
+    <a class='linkStyle' href='/signup'>Sign Up Instead</a>
   </div>
 </div>
 
 <script src='/js/login.js'></script>
+

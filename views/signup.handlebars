@@ -14,16 +14,18 @@
         id='passwordInput'
         class='loginForm'
         name='password'
+        oninput="maskPassword(this.value)"
       /><br />
       <span id='password' class='errorMsg red-text'></span><br />
 
       <p class='formTitles'>Confirm Password:</p>
       <label for='password'></label><br />
-      <input type='text' id='confirmPasswordInput' class='loginForm' /><br />
+      <input type='text' id='confirmPasswordInput' class='loginForm'oninput="maskPassword(this.value)" /><br />
       <span id='confirmPassword' class='errorMsg red-text'></span><br />
 
       <input type='button' id='validateBtn' class='button' value='Submit' />
     </form>
+    <br>
     <a class='linkStyle' href='/login'>Log In Instead</a>
   </div>
 </div>

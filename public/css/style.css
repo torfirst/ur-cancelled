@@ -47,6 +47,11 @@ h1 {
   font-size: inherit;
 }
 
+.linkStyle{
+  text-align: center;
+  font-size: .8rem;
+}
+
 body {
   background-color: var(--bgColor);
 }
@@ -68,7 +73,7 @@ input {
   margin: 2rem 15rem;
   padding: 2rem 10rem;
   background-color: rgb(220, 220, 238);
-  /* border-radius: 15px; */
+  border-radius: 15px;
 }
 
 form label {
@@ -255,22 +260,43 @@ form label {
   border-radius: 15px;
 }
 
+#eventName {
+  justify-content: flex-start;
+  width: 50%;
+}
+
+#eventDate {
+  justify-content: flex-end;
+  width:50%;
+}
+
+.eventDescript {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .eventHeading {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
 }
 
-.eventName {
-  justify-content: flex-start;
+#editEventHeading {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin:  0;
+  width: 100%;
 }
 
-.eventDate {
-  justify-content: flex-end;
+#editEventHeading label, #editEventDescript label{
+ display:none;
 }
 
-.eventDescript {
-  text-align: left;
+#editEventDescript textarea {
+  width: 100%;
+  line-height: 5rem;
+  border-radius: 20px
 }
 
 .flex-container {
@@ -363,15 +389,21 @@ form label {
   pointer-events: none;
 }
 
-#cancelChangesBtn {
-  width: 8rem;
+#cancelChangesBtn{
+  width: 7rem;
+  text-align: center;
   font-size: .8rem;
+  padding: .5rem 0;
 }
 
 #logout {
   width: 5.5rem;
   display: flex;
   justify-content: left;
+}
+
+#cancelBtn {
+justify-content: flex-end;
 }
 
 .hide {
