@@ -1,54 +1,80 @@
 
+
+const pass = document.getElementById('passwordInput');
+const confirmPass = document.getElementById('confirmPasswordInput');
+const displayPassError = document.getElementById('confirmPassword');
+
 const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const name = document.querySelector('#nameInput').value.trim();
-    const email = document.querySelector('#emailInput').value.trim();
-    const password = document.querySelector('#passwordInput').value.trim();
-  
-    if (name && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  };
-  
-  document
-    .querySelector('#validateBtn')
-    .addEventListener('submit', signupFormHandler);
-  
-    
-  const passwordInput = document.getElementById('password');
-  const confirmPasswordInput = document.getElementById('confirmPassword');
+  event.preventDefault();
 
-  passwordInput.addEventListener('input', (event) => {
-    maskPassword();
-    checkPasswordsMatch();
-  });
+  // const name = document.querySelector('#nameInput').value.trim();
+  const email = document.querySelector('#emailInput').value.trim();
+  const password = document.querySelector('#passwordInput').value.trim();
 
-  function maskPassword() {
-    const password = passwordInput.value;
-    const maskedPassword = '*'.repeat(password.length);
-    passwordInput.value = maskedPassword;
-  }
+  if (email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  function checkPasswordsMatch() {
-    const password = passwordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
-
-    if (password === confirmPassword) {
-      // Passwords match, you can perform additional actions if needed
-      console.log("Passwords match");
+    if (response.ok) {
+      document.location.replace('/profile');
     } else {
-      // Passwords do not match, you can handle this case
-      console.log("Passwords do not match");
+      alert(response.statusText);
     }
   }
+};
+
+const maskPassword = () => {
+  var passwordInput = document.getElementById("passwordInput");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+}
+
+const maskConfirmPass = () => {
+  var passwordInput = document.getElementById("confirmPasswordInput");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+}
+
+const checkPasswordsMatch = () => {
+  const password = passwordInput.value;
+  const confirmPassword = confirmPasswordInput.value;
+
+  if (password === confirmPassword) {
+    // Passwords match, you can perform additional actions if needed
+    console.log("Passwords match");
+  } else {
+    // Passwords do not match, you can handle this case
+    console.log("Passwords do not match");
+  }
+}
+
+function comparePass() {
+  if (confirmPass.value) {
+    if (pass.value != confirmPass.value) {
+      displayPassError.style.color = 'red'
+      displayPassError.innerHTML = 'Passwords do not match.'
+      return false
+    }
+  }
+}
+
+confirmPass.addEventListener('keyup', () => {
+  comparePass()
+})
+
+pass.addEventListener('keyup', () => {
+  comparePass()
+})
+
+document
+  .querySelector('#validateBtn')
+  .addEventListener('submit', signupFormHandler);

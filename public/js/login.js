@@ -27,37 +27,11 @@ document
   .querySelector('#emailForm')
   .addEventListener('submit', loginFormHandler);
 
-function maskPassword() {
-  const passwordInput = document.getElementById('password');
-  const maskedPasswordInput = document.getElementById('maskedPassword');
-
-  const password = passwordInput.value;
-  const maskedPassword = '*'.repeat(password.length);
-
-  maskedPasswordInput.value = maskedPassword;
-}
-
-
-const emailForm = document.getElementById('emailForm');
-const emailInput = document.getElementById('emailInput');
-const emailError = document.getElementById('email');
-
-
-function validateEmail(email) {
-  // Regular expression for basic email validation
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (emailRegex.test(email)) {
-    // Additional check for characters before '@' and after '.'
-    var atIndex = email.indexOf('@');
-    var dotIndex = email.lastIndexOf('.');
-
-    if (atIndex > 0 && dotIndex > atIndex + 1 && dotIndex < email.length - 1) {
-      return true; 
-    }
+  const maskPassword = () => {
+  var passwordInput = document.getElementById("passwordInput");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
   } else {
-    emailError.textContent = 'Please enter a valid email address.';
+    passwordInput.type = "password";
   }
-
-  return false;
 }
