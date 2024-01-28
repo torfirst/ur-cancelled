@@ -43,8 +43,9 @@ router.get('/signup', (req, res) => {
 
 router.get('/profile', (req, res) => {
   res.render('profile', {
-    logged_in: false,
+    logged_in: true,
     includeScript: 'profile.js',
+    showBackBtn: true,
   });
 });
 

@@ -69,3 +69,16 @@ for (let i = 0; i < coll.length; i++) {
     });
 }
 
+
+const profileHandler = async (event) => {
+    event.preventDefault();
+    console.log('hello');
+
+    document.location.replace('/profile');
+      };
+
+  
+  
+  document
+    .querySelector('#profileBtn')
+    .addEventListener('click', profileHandler);
