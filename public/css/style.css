@@ -47,10 +47,6 @@ h1 {
   font-size: inherit;
 }
 
-.linkStyle {
-  text-align: center;
-}
-
 body {
   background-color: var(--bgColor);
 }
@@ -259,6 +255,12 @@ form label {
   border-radius: 15px;
 }
 
+.eventHeading {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
 .eventName {
   justify-content: flex-start;
 }
@@ -269,32 +271,6 @@ form label {
 
 .eventDescript {
   text-align: left;
-  margin-bottom: 1rem;
-}
-
-#editEventHeading {
-  width: 100%;
-  display: inline-block;
-  padding: 1rem 0;
-  margin: 0;
-}
-
-#eventHeading {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-
-#editEventHeading label,
-#editEventDescript label {
-  display: none;
-}
-
-#editEventDescript textarea {
-  width: 100%;
-  line-height: 5rem;
-  border-radius: 20px
 }
 
 .flex-container {
