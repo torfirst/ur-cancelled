@@ -40,6 +40,29 @@
             <h1 id='eventName'>{{event.title}}</h1>
             <h1 id='eventDate'>{{event.dateOfEvent}}</h1>
         </div>
+        <div>
+          <div class='flex-item'>
+            <input
+              type='button'
+              id='editEventBtn'
+              class='btnStyle'
+              value='Edit Event'
+            />
+          </div>
+          <div class='flex-item'>
+            <input
+              type='button'
+              id='cancelBtn'
+              class='btnStyle'
+              value='Cancel'
+            />
+            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+            <script>
+              document.getElementById("cancelBtn").addEventListener("click", () => {
+                confetti();
+              })
+            </script>
+          </div>
 
         <div id="editEventHeading" class="hide">
             <label for="eventNameInput"></label>
