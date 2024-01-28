@@ -18,31 +18,39 @@ router.get('/', async (req, res) => {
   }
   console.log(events);
   res.render('home', {
-    name: '',
     // user: userData,
     events,
     logged_in: true,
     showProfileBtn: true,
+    showBackBtn: false,
   });
 });
 
 router.get('/login', (req, res) => {
   res.render('login', {
-    // var em = req.body.email;
-    // var pw = req.body.password;
+    logged_in: false,
+    showProfileBtn: false,
+    showBackBtn: false,
+    includeScript: 'login.js',
   });
 });
 
-// router.get('/signup', (req, res) => {
-//   res.render('views/signup', {
-//     pageTitle: 'Sign Up',
-//     body: 'signup',
-//     logged_in: false,
-//   });
-// });
+router.get('/signup', (req, res) => {
+  res.render('signup', {
+    logged_in: false,
+    showProfileBtn: false,
+    showBackBtn: false,
+    includeScript: 'signup.js',
+  });
+});
 
-router.get('/all', (req, res) => {
-  res.render('all');
+router.get('/profile', (req, res) => {
+  res.render('profile', {
+    logged_in: true,
+    showProfileBtn: false,
+    showBackBtn: true,
+    includeScript: 'profile.js',
+  });
 });
 
 module.exports = router;

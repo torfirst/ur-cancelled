@@ -31,20 +31,6 @@ emailInput.addEventListener('input', (event) => {
     emailError.textContent = '';
 });
 
-// validateBtn.addEventListener('click', (event) => {
-//     let hasError = false;
-
-//     if (emailInput.value.length < 9) {
-//         event.preventDefault();
-//         emailError.textContent = 'Please enter a valid email address.';
-//         hasError = true;
-//     }
-
-//     if (emailError || passwordError) {
-//         event.preventDefault();
-//     }
-// });
-
 function validateEmail(email) {
     // Regular expression for basic email validation
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -59,7 +45,7 @@ function validateEmail(email) {
         }
     }
 
-    return false; // Email is invalid
+    return false; 
 }
 
 if (validateEmail(emailInput)) {

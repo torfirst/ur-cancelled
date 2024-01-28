@@ -8,11 +8,6 @@
   padding: 0;
   font-size: 1.25rem;
   font-family: Verdana, sans-serif;
-  /* border: 1px solid red; */
-}
-
-.hide {
-  display: none;
 }
 
 header {
@@ -33,7 +28,7 @@ nav button {
   margin-left: 1rem;
 }
 
-.eventFormTitle{
+.eventFormTitle {
   color: black;
 }
 
@@ -50,6 +45,10 @@ h1 {
 .red-text {
   color: red;
   font-size: inherit;
+}
+
+.linkStyle{
+  text-align: center;
 }
 
 body {
@@ -238,7 +237,10 @@ form label {
   text-align: left;
 }
 
-.addEventFormStyle input, .eventFormLabel, .scheduleBtn, .eventFormTitle {
+.addEventFormStyle input,
+.eventFormLabel,
+.scheduleBtn,
+.eventFormTitle {
   margin: .5rem 1.25rem;
 }
 
@@ -250,32 +252,10 @@ form label {
   padding: .25rem 1rem;
 }
 
-/* 
-.collapsible {
-  color: var(--heading);
-  border: none;
-}
-
-.collapsible h2:hover {
-  color: #e9b259;
-}
-
-.collapsible h2:after {
-  content: '\002B';
-  color: var(--heading);
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-.active h2:after {
-  content: "\2212";
-} */
-
 .eventCard {
   margin: 0 4rem;
   padding: 0 4rem;
   background-color: var(--lightColor);
-  border: 2px solid white;
   border-radius: 15px;
 }
 
@@ -284,6 +264,7 @@ form label {
   justify-content: space-between;
   padding: 1rem 0;
 }
+
 
 .eventName {
   justify-content: flex-start;
@@ -295,6 +276,24 @@ form label {
 
 .eventDescript {
   text-align: left;
+  margin-bottom: 1rem;
+}
+
+#editEventHeading {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin:  0;
+}
+
+#editEventHeading label, #editEventDescript label{
+ display:none;
+}
+
+#editEventDescript textarea {
+  width: 100%;
+  line-height: 5rem;
+  border-radius: 20px
 }
 
 .flex-container {
@@ -306,7 +305,7 @@ form label {
 }
 
 .flex-item {
-  padding: .3rem;
+  padding: 0 0 1rem 0;
 }
 
 .participant {
@@ -319,8 +318,8 @@ form label {
 .participantDiv {
   display: flex;
   flex-direction: column;
-
   justify-content: space-evenly;
+  padding: 1rem 0;
 }
 
 .cardBtnDiv {
@@ -393,3 +392,7 @@ form label {
   justify-content: left;
 }
 
+.hide {
+  display: none !important;
+  visibility: hidden;
+}
