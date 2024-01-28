@@ -18,22 +18,31 @@ router.get('/', async (req, res) => {
   }
   console.log(events);
   res.render('home', {
+    name: '',
     // user: userData,
     events,
     logged_in: true,
     showProfileBtn: true,
-
-    showBackBtn: false,
-
   });
 });
 
 router.get('/login', (req, res) => {
   res.render('login', {
-
-    logged_in: false,
-    showProfileBtn: false,
-    showBackBtn: false,
+    // var em = req.body.email;
+    // var pw = req.body.password;
   });
 });
 
+// router.get('/signup', (req, res) => {
+//   res.render('views/signup', {
+//     pageTitle: 'Sign Up',
+//     body: 'signup',
+//     logged_in: false,
+//   });
+// });
+
+router.get('/all', (req, res) => {
+  res.render('all');
+});
+
+module.exports = router;
