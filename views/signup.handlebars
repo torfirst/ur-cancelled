@@ -1,29 +1,29 @@
 <div class='mainContainer'>
   <h3>Sign Up Below</h3>
   <div class='signupDiv'>
-    <form id='emailForm' action='/signup' method='post'>
+    <form id='emailForm' onsubmit="return comparePass()" action='/signup' method='post'>
       <p class='formTitles'>Email Address:</p>
       <label for='email'></label><br />
-      <input type='text' id='emailInput' class='loginForm' name='email' /><br />
+      <input type='text' id='emailInput' class='loginForm' name='email' onclick="validateEmail()"/><br />
       <span id='email' class='errorMsg red-text'></span><br />
 
       <p class='formTitles'>Password:</p>
       <label for='password'></label><br />
       <input
-        type='text'
+        type='password'
         id='passwordInput'
         class='loginForm'
         name='password'
-        oninput="maskPassword(this.value)"
       /><br />
       <span id='password' class='errorMsg red-text'></span><br />
 
       <p class='formTitles'>Confirm Password:</p>
-      <label for='password'></label><br />
-      <input type='text' id='confirmPasswordInput' class='loginForm'oninput="maskPassword(this.value)" /><br />
-      <span id='confirmPassword' class='errorMsg red-text'></span><br />
+      <label for='confirmPassword'></label><br />
+      <input type='password' id='confirmPasswordInput' class='loginForm' 
+        name='confirmPassword'/><br />
+      <span id='confirmPassword' class='errorMsg red-text'></span><br /><br>
 
-      <input type='button' id='validateBtn' class='button' value='Submit' />
+      <input type='submit' id='validateBtn' class='button' value='Submit' />
     </form>
     <br>
     <a class='linkStyle' href='/login'>Log In Instead</a>

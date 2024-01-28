@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
     events,
     logged_in: true,
     showProfileBtn: true,
+    showBackBtn: false,
     includeScript: 'home.js'
     ,
   });
@@ -31,6 +32,7 @@ router.get('/', async (req, res) => {
 router.get('/login', (req, res) => {
   res.render('login', {
     includeScript: 'login.js',
+    showBackBtn: false,
   });
 });
 
@@ -38,6 +40,7 @@ router.get('/signup', (req, res) => {
   res.render('signup', {
     logged_in: false,
     includeScript: 'signup.js',
+    showBackBtn: false,
   });
 });
 
@@ -53,6 +56,7 @@ router.get('/logout', (req, res) => {
   res.render('logout', {
     logged_in: false,
     includeScript: 'logout.js',
+    showBackBtn: false,
   });
 });
 
