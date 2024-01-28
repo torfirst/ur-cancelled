@@ -1,4 +1,5 @@
 
+const Events = require('../../models/Events.js');
 const editEventBtn = document.getElementById('editEventBtn');
 const updateEventBtn = document.getElementById('updateEventBtn');
 const eventHeading = document.getElementById("eventHeading");
@@ -69,3 +70,25 @@ for (let i = 0; i < coll.length; i++) {
     });
 }
 
+
+Events.findAll().then((results) => {
+    const formattedResults = results.map((result) => {
+        const options = {
+            weekday: 'long', // Full day name (e.g., Sunday)
+            month: 'short',  // Abbreviated month name (e.g., Feb)
+            day: 'numeric',  // Day of the month (e.g., 25)
+            year: 'numeric', // Full year (e.g., 2024)
+            hour: 'numeric', // Hour (e.g., 00)
+            minute: 'numeric', // Minute (e.g., 00)
+            timeZoneName: 'short', // Short time zone name (e.g., CST)
+        };
+
+        const formattedDate = result.dateOfEvent.toLocaleString('en-US', options);
+
+        return {
+            // Other fields from your model
+            dateOfEvent: formattedDate,
+        };
+    });
+    console.log(formattedResults);
+});
