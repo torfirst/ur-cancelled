@@ -41,6 +41,7 @@
             <h1 id='eventDate'>{{event.dateOfEvent}}</h1>
         </div>
 
+
         <div id="editEventHeading" class="hide">
             <label for="eventNameInput"></label>
             <input type="text" id="eventNameInput" name="eventTitle">
@@ -154,3 +155,10 @@
         });
     }
 </script>
+
+            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+            <script>
+              document.getElementById("cancelBtn").addEventListener("click", () => {
+                confetti();
+              })
+            </script>
