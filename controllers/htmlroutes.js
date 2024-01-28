@@ -18,19 +18,22 @@ router.get('/', async (req, res) => {
   }
   console.log(events);
   res.render('home', {
-    name: '',
     // user: userData,
     events,
     logged_in: true,
     showProfileBtn: true,
-    includeScript: 'home.js',
+
+    showBackBtn: false,
+
   });
 });
 
 router.get('/login', (req, res) => {
   res.render('login', {
-    includeScript: 'login.js',
+
+    logged_in: false,
+    showProfileBtn: false,
+    showBackBtn: false,
   });
 });
 
-module.exports = router;
