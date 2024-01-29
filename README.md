@@ -1,65 +1,59 @@
-# <Your-Project-Title>
+# Ur Cancelled App
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Our motivation in the project was to create an interactive scheduling/canceling website designed to get two users and make it so they could schedule an event and cancel it if need be, where one user can cancel it and it doesn't eliminate the event but when both users cancel it eliminates the event, this is alo what we wanted to com e out of this app. Our app solves the problems of scheduling an event that you didn't really want to attend where you can cancel and the other user cancels it, it eliminates the event. Through this project our team learn how to professionally organize files, use my sql, Node.js, Express.js, Handlebars.js, GET and POST routes, using one new library package (confetti button), and connecting it all wit java script.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+## Acceptance Criteria
 
-## Table of Contents (Optional)
+GIVEN a that the website is fully functionable
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+WHEN WE successfully assemble a working website that works with a database that logs events and users
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+WHEN WE create a database that collects User and Event data
+
+WHEN WE create a working login and signup page
+
+WHEN WE create a working home page that displays the users events
+
+WHEN WE create working edit and cancel buttons that let you edit and cancel your events
+
+WHEN WE create a working profile page to update you info
+
+WHEN WE create a working logout button to log out of our website
+
+When THE website is successfully deployed to heroku and works
+
+When THE website looks professional and looks appealing
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Front End:
+Use provided link:
 
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+Back End (in VS code):
+-Clone Git Repo to folder
+-Open integrated terminal
+-Run npm i install
+-Create yourecancelled_db; database in my SQL
+-Run npm run seed
+-Run node server.js
+-Open browser and use http://localhost:3001/login
+-Create a login and create an event
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Victoria First https://github.com/torfirst
+Samuel Gillam https://github.com/segillam
+Garrett Gonzales https://github.com/garrettgonzo
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Video tutorials used:
+confetti button video - https://www.youtube.com/watch?v=hq_tKbSzAiY
+handlebars structure video - https://www.youtube.com/watch?v=4CXtw1CIauQ
 
-If you followed tutorials, include links to those here as well.
+Outsource code:
+Toggle Password Visibility - https://www.w3schools.com/howto/howto_js_toggle_password.asp
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
