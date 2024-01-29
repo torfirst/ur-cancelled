@@ -7,7 +7,6 @@ const displayPassError = document.getElementById('confirmPassword');
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  // const name = document.querySelector('#nameInput').value.trim();
   const email = document.querySelector('#emailInput').value.trim();
   const password = document.querySelector('#passwordInput').value.trim();
 

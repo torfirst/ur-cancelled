@@ -47,7 +47,7 @@ h1 {
   font-size: inherit;
 }
 
-.linkStyle{
+.linkStyle {
   text-align: center;
   font-size: .8rem;
 }
@@ -60,6 +60,7 @@ input {
   border: 1px solid grey;
   border-radius: 25px;
 }
+
 
 .mainContainer {
   margin: 2rem 0;
@@ -232,6 +233,7 @@ form label {
   margin-top: 1rem;
 }
 
+
 .addEventFormStyle {
   background-color: var(--lightColor);
   border-radius: 15px;
@@ -242,7 +244,8 @@ form label {
 .eventFormLabel,
 .scheduleBtn,
 .eventFormTitle {
-  margin: .5rem 1.25rem;
+  margin: .25rem 1.25rem;
+  font-size:1rem;
 }
 
 .eventFormLabel {
@@ -251,6 +254,16 @@ form label {
 
 .addEventFormStyle input {
   padding: .25rem 1rem;
+}
+
+#inviteDescriptInput {
+  margin: .25rem 1.25rem;
+  width: 90%;
+}
+
+#addEventDate {
+  width: 65%;
+  font-size: 1rem;
 }
 
 .eventCard {
@@ -267,7 +280,7 @@ form label {
 
 #eventDate {
   justify-content: flex-end;
-  width:50%;
+  width: 100%;
 }
 
 .eventDescript {
@@ -279,24 +292,6 @@ form label {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
-}
-
-#editEventHeading {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  margin:  0;
-  width: 100%;
-}
-
-#editEventHeading label, #editEventDescript label{
- display:none;
-}
-
-#editEventDescript textarea {
-  width: 100%;
-  line-height: 5rem;
-  border-radius: 20px
 }
 
 .flex-container {
@@ -389,7 +384,47 @@ form label {
   pointer-events: none;
 }
 
-#cancelChangesBtn{
+#editEventHeading {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin: 0;
+  width: 100%;
+  height: 4rem;
+  font-size: 1rem;
+}
+
+#editEventHeading label,
+#editEventDescript label {
+  display: none;
+}
+
+#eventNameInput {
+  border-radius: 25px;
+  padding: .2rem;
+  align-items: center;
+}
+
+
+#editEventDescript textarea {
+  width: 100%;
+  margin-top: 0;
+  font-size: 1rem;
+  height: 10rem;
+  border: 1px solid grey;
+  border-radius: 20px;
+}
+
+textarea {
+  border: 1px solid grey;
+  border-radius: 20px;
+  line-height: 1rem;
+  resize: none;
+  padding: .5rem;
+  font-size: 1rem;
+}
+
+#cancelChangesBtn {
   width: 7rem;
   text-align: center;
   font-size: .8rem;
@@ -403,7 +438,7 @@ form label {
 }
 
 #cancelBtn {
-justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .hide {

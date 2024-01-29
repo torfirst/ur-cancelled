@@ -8,22 +8,22 @@
 
             <div class='content addEventFormStyle'>
                 <form id='addEventForm' action='/submit' method='post'>
-                    <h3 class='eventFormTitle'>Schedule New Event</h3>
+                    <h5 class='eventFormTitle'>Schedule New Event</h5>
                     <label for='inviteEmailInput' class='eventFormLabel'>Enter email of
                         who you're going with:</label><br />
-                    <input type='text' id='inviteEmailInput' name='inputField' />
+                    <input type='text' id='inviteEmailInput' name='inviteEmailInput' />
 
                     <br />
                     <label for='eventTitleInput' class='eventFormLabel'>Event Title:</label><br />
-                    <input type='text' id='eventTitleInput' name='inputField' />
+                    <input type='text' id='eventTitleInput' name='eventTitleInput' />
 
                     <br /><label for='eventDate' class='eventFormLabel'>Event date:</label><br />
-                    <input type='datetime-local' id='eventDate' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
+                    <input type='datetime-local' id='addEventDate' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
                         max='2999-12-31' />
                     <br />
 
                     <label for='eventDescript' class='eventFormLabel'>Description:</label><br />
-                    <input type='text' id='inviteEmailInput' name='inputField' /><br />
+                    <textarea type='text' id='inviteDescriptInput' name='eventDescript' /></textarea><br />
 
                     <div class='scheduleBtn'>
                         <button type='submit' class='button'>Schedule</button>
@@ -43,7 +43,7 @@
 
         <div id="editEventHeading" class="hide">
             <label for="eventNameInput"></label>
-            <input type="text" id="eventNameInput" name="eventTitle">
+            <textarea type="text" id="eventNameInput" name="eventTitle">{{event.title}}</textarea>
             <label for="eventDate"></label>
             <input type='datetime-local' id='eventDateInput' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
                 max='2999-12-31' />
@@ -55,18 +55,16 @@
         </div>
         <div id="editEventDescript" class="eventDescript hide">
             <label for="eventDescript"></label>
-            <textarea type="text" id="eventDescriptInput" name="eventDescript"></textarea>
+            <textarea type="text" id="eventDescriptInput" name="eventDescript">{{event.description}}</textarea>
         </div>
 
         <h5>Who's Going?</h5>
         <div class='flex-container cardBtnDiv'>
             <div class='participantDiv'>
-                <div class='flex-item participant'>{{user.firstname}}
-                    {{user.email}}
-                    User 1 / user@email.com</div>
-                <div id="invitedUser" class="flex-item participant">{{user.firstname}}
-                    {{user.email}}
-                    User 2 / user@example.com</div>
+                <div class='flex-item participant'>{{users.firstname}} / {{user.email}}
+                    </div>
+                <div id="invitedUser" class="flex-item participant">{{user.firstname}} / {{user.email}}
+                    User 2 user@example.com</div>
 
                 <input type="text" id="editInvitedUser" name="eventDate" class="hide">
             </div>
