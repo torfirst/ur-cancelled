@@ -243,53 +243,6 @@ for (let i = 0; i < coll.length; i++) {
   });
 }
 
-// Events.findAll().then((results) => {
-//   const removeCanceledEvents = results.filter(
-//     (event) => event.eventStatus !== 'Cancelled'
-//   );
-//   // next line remove results and replace with removeCanceledEvents
-//   const formattedResults = results.map((result) => {
-//     const options = {
-//       weekday: 'long', // Full day name (e.g., Sunday)
-//       month: 'short', // Abbreviated month name (e.g., Feb)
-//       day: 'numeric', // Day of the month (e.g., 25)
-//       year: 'numeric', // Full year (e.g., 2024)
-//       hour: 'numeric', // Hour (e.g., 00)
-//       minute: 'numeric', // Minute (e.g., 00)
-//       timeZoneName: 'short', // Short time zone name (e.g., CST)
-//     };
-
-//     const formattedDate = result.dateOfEvent.toLocaleString('en-US', options);
-
-//     return {
-//       // Other fields from your model
-//       dateOfEvent: formattedDate,
-//     };
-//   });
-//   console.log(formattedResults);
-// });
-
-// Events.findAll().then((results) => {
-//     const formattedResults = results.map((result) => {
-//         const options = {
-//             weekday: 'long', // Full day name (e.g., Sunday)
-//             month: 'short',  // Abbreviated month name (e.g., Feb)
-//             day: 'numeric',  // Day of the month (e.g., 25)
-//             year: 'numeric', // Full year (e.g., 2024)
-//             hour: 'numeric', // Hour (e.g., 00)
-//             minute: 'numeric', // Minute (e.g., 00)
-//             timeZoneName: 'short', // Short time zone name (e.g., CST)
-//         };
-
-//         const formattedDate = result.dateOfEvent.toLocaleString('en-US', options);
-
-//         return {
-//             dateOfEvent: formattedDate,
-//         };
-//     });
-//     console.log(formattedResults);
-// });
-
 const cancelButtons = document.querySelectorAll('.cancelButton');
 for (i = 0; i < cancelButtons.length; i++) {
   cancelButtons[i].addEventListener('click', () => {
