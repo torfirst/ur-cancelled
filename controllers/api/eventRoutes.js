@@ -15,9 +15,11 @@ router.get('/', async (req, res) => {
 //post a new event
 router.post('/add', async (req, res) => {
   try {
+    console.log(req.body);
     const newEvent = await Event.create({
       ...req.body,
       user_id_1: req.session.user_id,
+      user_id_2: 2,
     });
     res.status(201).json(newEvent);
   } catch (error) {

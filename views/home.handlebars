@@ -1,114 +1,154 @@
 <div>
-    <h3 class='eventPageTitle'>My Events</h3>
-    <div class='eventsDiv'>
-        <h6 class='welcomeMsg'>Welcome, User {{this.firstname}}</h6>
-        <div class='addEventBtnDiv'>
+  <h3 class='eventPageTitle'>My Events</h3>
+  <div class='eventsDiv'>
+    <h6 class='welcomeMsg'>Welcome, User {{this.firstname}}</h6>
+    <div class='addEventBtnDiv'>
 
-            <button class='button addEventBtn collapsible' {{! onclick='toggleCollapsible()' }}>Add Event</button>
+      <button
+        class='button addEventBtn collapsible'
+        {{! onclick='toggleCollapsible()' }}
+      >Add Event</button>
 
-            <div class='content addEventFormStyle'>
-                <form id='addEventForm' action='/submit' method='post'>
-                    <h3 class='eventFormTitle'>Schedule New Event</h3>
-                    <label for='inviteEmailInput' class='eventFormLabel'>Enter email of
-                        who you're going with:</label><br />
-                    <input type='text' id='inviteEmailInput' name='inputField' />
+      <div class='content addEventFormStyle'>
+        <form id='addEventForm'>
+          <h3 class='eventFormTitle'>Schedule New Event</h3>
+          <label for='inviteEmailInput' class='eventFormLabel'>Enter email of
+            who you're going with:</label><br />
+          <input type='text' id='inviteEmailInput' name='inputField' />
 
-                    <br />
-                    <label for='eventTitleInput' class='eventFormLabel'>Event Title:</label><br />
-                    <input type='text' id='eventTitleInput' name='inputField' />
+          <br />
+          <label for='eventTitleInput' class='eventFormLabel'>Event Title:</label><br
+          />
+          <input type='text' id='eventTitleInput' name='inputField' />
 
-                    <br /><label for='eventDate' class='eventFormLabel'>Event date:</label><br />
-                    <input type='datetime-local' id='eventDate' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
-                        max='2999-12-31' />
-                    <br />
+          <br /><label for='eventDate' class='eventFormLabel'>Event date:</label><br
+          />
+          <input
+            type='datetime-local'
+            id='eventDate'
+            name='eventDate'
+            value='2018-07-22T00:00'
+            min='2023-01-01'
+            max='2999-12-31'
+          />
+          <br />
 
-                    <label for='eventDescript' class='eventFormLabel'>Description:</label><br />
-                    <input type='text' id='inviteEmailInput' name='inputField' /><br />
+          <label
+            for='addEventDescript'
+            class='eventFormLabel'
+          >Description:</label><br />
+          <input type='text' id='addEventDescript' name='inputField' /><br />
 
-                    <div class='scheduleBtn'>
-                        <button type='submit' class='button'>Schedule</button>
-                    </div>
+          <div class='scheduleBtn'>
+            <button type='submit' class='button'>Schedule</button>
+          </div>
 
-                </form>
-            </div>
-        </div>
+        </form>
+      </div>
     </div>
+  </div>
 
-    {{#each events as |event|}}
+  {{#each events as |event index|}}
     <div class='eventCard'>
-        <div id="eventHeading" class='eventHeading'>
-            <h1 id='eventName'>{{event.title}}</h1>
-            <h1 id='eventDate'>{{event.dateOfEvent}}</h1>
-        </div>
+      <div id='eventHeading' class='eventHeading'>
+        <h1 id='eventName'>{{event.title}}</h1>
+        <h1 id='eventDate'>{{event.dateOfEvent}}</h1>
+      </div>
 
-        <div id="editEventHeading" class="hide">
-            <label for="eventNameInput"></label>
-            <input type="text" id="eventNameInput" name="eventTitle">
-            <label for="eventDate"></label>
-            <input type='datetime-local' id='eventDateInput' name='eventDate' value='2018-07-22T00:00' min='2023-01-01'
-                max='2999-12-31' />
-          
-        </div>
+      <div id='editEventHeading' class='hide'>
+        <label for='eventNameInput'></label>
+        <input type='text' id='eventNameInput' name='eventTitle' />
+        <label for='eventDate'></label>
+        <input
+          type='datetime-local'
+          id='eventDateInput'
+          name='eventDate'
+          value='2018-07-22T00:00'
+          min='2023-01-01'
+          max='2999-12-31'
+        />
 
-        <div id="eventDescript" class='eventDescript'>
-            <p>{{event.description}}</p>
-        </div>
-        <div id="editEventDescript" class="eventDescript hide">
-            <label for="eventDescript"></label>
-            <textarea type="text" id="eventDescriptInput" name="eventDescript"></textarea>
-        </div>
+      </div>
 
-        <h5>Who's Going?</h5>
-        <div class='flex-container cardBtnDiv'>
-            <div class='participantDiv'>
-                <div class='flex-item participant'>{{user.firstname}}
-                    {{user.email}}
-                    User 1 / user@email.com</div>
-                <div id="invitedUser" class="flex-item participant">{{user.firstname}}
-                    {{user.email}}
-                    User 2 / user@example.com</div>
+      <div id='eventDescript' class='eventDescript'>
+        <p>{{event.description}}</p>
+      </div>
+      <div id='editEventDescript' class='eventDescript hide'>
+        <label for='eventDescript'></label>
+        <textarea
+          type='text'
+          id='eventDescriptInput'
+          name='eventDescript'
+        ></textarea>
+      </div>
 
-                <input type="text" id="editInvitedUser" name="eventDate" class="hide">
-            </div>
-            <div>
-                <div class='flex-item'>
-                    <input type='button' id='editEventBtn' class='btnStyle' value='Edit Event' />
-                    <input type="submit" id="updateEventBtn" class="hide btnStyle" value="Update">  
-                </div>
-                <div class='flex-item'>
-                    <input type='button' id='cancelChangesBtn' class='hide btnStyle' value='Cancel Changes' />
-                    <input type='submit' id='cancelBtn' class='btnStyle' value='Cancel' />
-                </div>
+      <h5>Who's Going?</h5>
+      <div class='flex-container cardBtnDiv'>
+        <div class='participantDiv'>
+          <div class='flex-item participant'>{{user.firstname}}
+            {{user.email}}
+            User 1 / user@email.com</div>
+          <div id='invitedUser' class='flex-item participant'>{{user.firstname}}
+            {{user.email}}
+            User 2 / user@example.com</div>
 
-            </div>
+          <input
+            type='text'
+            id='editInvitedUser'
+            name='eventDate'
+            class='hide'
+          />
         </div>
+        <div>
+          <div class='flex-item'>
+            <input
+              type='button'
+              id='editEventBtn'
+              class='btnStyle'
+              value='Edit Event'
+            />
+            <input
+              type='submit'
+              id='updateEventBtn'
+              class='hide btnStyle'
+              value='Update'
+            />
+          </div>
+          <div class='flex-item'>
+            <input
+              type='button'
+              id='cancelChangesBtn'
+              class='hide btnStyle'
+              value='Cancel Changes'
+            />
+            <input
+              type='submit'
+              id='cancelBtn{{index}}'
+              class='btnStyle cancelButton'
+              value='Cancel'
+            />
+          </div>
+
+        </div>
+      </div>
     </div>
-    {{/each}}
+  {{/each}}
 </div>
 
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script>
-    document.getElementById("cancelBtn").addEventListener("click", () => {
-        var duration = 5 * 1000;
-        var animationEnd = Date.now() + duration;
-        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-        function randomInRange(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        var interval = setInterval(function () {
-            var timeLeft = animationEnd - Date.now();
-
-            if (timeLeft <= 0) {
-                return clearInterval(interval);
-            }
-
-            var particleCount = 50 * (timeLeft / duration);
-            // since particles fall down, start a bit higher than random
-            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-        }, 250);
-    })
-</script>
+<script
+  src='https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'
+></script>
+{{! <script>
+  const cancelButtons = document.querySelectorAll('.cancelButton'); for (i = 0;i
+  < cancelButtons.length;i++){ cancelButtons [i].addEventListener("click", () =>
+  { var duration = 5 * 1000; var animationEnd = Date.now() + duration; var
+  defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }; function
+  randomInRange(min, max) { return Math.random() * (max - min) + min; } var
+  interval = setInterval(function () { var timeLeft = animationEnd - Date.now();
+  if (timeLeft <= 0) { return clearInterval(interval); } var particleCount = 50
+  * (timeLeft / duration); // since particles fall down, start a bit higher than
+  random confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1,
+  0.3), y: Math.random() - 0.2 } }); confetti({ ...defaults, particleCount,
+  origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }); }, 250); })
+  }
+</script> }}
