@@ -1,7 +1,7 @@
 <div>
   <h3 class='eventPageTitle'>My Events</h3>
   <div class='eventsDiv'>
-    <h6 class='welcomeMsg'>Welcome, User {{this.firstname}}</h6>
+    <h6 class='welcomeMsg'>Welcome, {{userName}}</h6>
     <div class='addEventBtnDiv'>
 
       <button
@@ -82,15 +82,13 @@
         ></textarea>
       </div>
 
-      <h5>Who's Going?</h5>
+      <h5>Who's Hosting?</h5>
       <div class='flex-container cardBtnDiv'>
         <div class='participantDiv'>
           <div class='flex-item participant'>{{user.firstname}}
+            /
             {{user.email}}
-            User 1 / user@email.com</div>
-          <div id='invitedUser' class='flex-item participant'>{{user.firstname}}
-            {{user.email}}
-            User 2 / user@example.com</div>
+          </div>
 
           <input
             type='text'

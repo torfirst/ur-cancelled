@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Event } = require('../models');
+const { Event, User } = require('../models');
 const { Op } = require('sequelize');
 
 router.get('/', async (req, res) => {
@@ -13,19 +13,19 @@ router.get('/', async (req, res) => {
           { user_id_2: req.session.user_id },
         ],
       },
+      include: [User],
     });
     events = eventData.map((event) => event.get({ plain: true }));
   }
   console.log(events);
   res.render('home', {
     name: '',
-    // user: userData,
+    userName: req.session.userName,
     events,
     logged_in: true,
     showProfileBtn: true,
     showBackBtn: false,
-    includeScript: 'home.js'
-    ,
+    includeScript: 'home.js',
   });
 });
 
