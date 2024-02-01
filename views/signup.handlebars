@@ -1,10 +1,38 @@
 <div class='mainContainer'>
   <h3>Sign Up Below</h3>
   <div class='signupDiv'>
-    <form id='emailForm' onsubmit="return comparePass()" action='/signup' method='post'>
+    <form id='emailForm'>
+      <p class='formTitles'>First Name:</p>
+      <label for='firstName'></label><br />
+      <input
+        type='text'
+        id='firstNameInput'
+        class='loginForm'
+        name='firstName'
+        onclick='validateEmail()'
+      /><br />
+      <span id='firstName' class='errorMsg red-text'></span><br />
+
+      <p class='formTitles'>Last Name:</p>
+      <label for='lastName'></label><br />
+      <input
+        type='text'
+        id='lastNameInput'
+        class='loginForm'
+        name='lastName'
+        onclick='validateEmail()'
+      /><br />
+      <span id='lastName' class='errorMsg red-text'></span><br />
+
       <p class='formTitles'>Email Address:</p>
       <label for='email'></label><br />
-      <input type='text' id='emailInput' class='loginForm' name='email' onclick="validateEmail()"/><br />
+      <input
+        type='text'
+        id='emailInput'
+        class='loginForm'
+        name='email'
+        onclick='validateEmail()'
+      /><br />
       <span id='email' class='errorMsg red-text'></span><br />
 
       <p class='formTitles'>Password:</p>
@@ -19,13 +47,18 @@
 
       <p class='formTitles'>Confirm Password:</p>
       <label for='confirmPassword'></label><br />
-      <input type='password' id='confirmPasswordInput' class='loginForm' 
-        name='confirmPassword'/><br />
-      <span id='confirmPassword' class='errorMsg red-text'></span><br /><br>
+      <input
+        type='password'
+        id='confirmPasswordInput'
+        class='loginForm'
+        name='confirmPassword'
+      /><br />
+      <span id='confirmPassword' class='errorMsg red-text'></span><br /><br />
 
       <input type='submit' id='validateBtn' class='button' value='Submit' />
     </form>
-    <br>
+    <br />
     <a class='linkStyle' href='/login'>Log In Instead</a>
   </div>
 </div>
+<script src='/js/signup.js'></script>

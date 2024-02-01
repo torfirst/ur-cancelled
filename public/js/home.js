@@ -24,7 +24,7 @@ const editEvent = () => {
   updateEventBtn.classList.remove('hide');
   eventHeading.classList.add('hide');
   eventDescript.classList.add('hide');
-  invitedUser.classList.add('hide');
+  // invitedUser.classList.add('hide');
   editEventHeading.classList.remove('hide');
   editEventDescript.classList.remove('hide');
   editInvitedUser.classList.remove('hide');
@@ -37,7 +37,7 @@ const updateEventDetails = () => {
   updateEventBtn.classList.add('hide');
   eventHeading.classList.remove('hide');
   eventDescript.classList.remove('hide');
-  invitedUser.classList.remove('hide');
+  // invitedUser.classList.remove('hide');
   editEventHeading.classList.add('hide');
   editEventDescript.classList.add('hide');
   editInvitedUser.classList.add('hide');
@@ -201,9 +201,9 @@ function addEvent(event) {
   }
 }
 
-updateEventBtn.addEventListener('click', updateEventDetails);
-editEventBtn.addEventListener('click', editEvent);
-cancelChangesBtn.addEventListener('click', cancelChanges);
+updateEventBtn?.addEventListener('click', updateEventDetails);
+editEventBtn?.addEventListener('click', editEvent);
+cancelChangesBtn?.addEventListener('click', cancelChanges);
 addEventForm.addEventListener('submit', addEvent);
 
 function extractNumberFromString(str) {
